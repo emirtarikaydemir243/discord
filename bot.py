@@ -1,6 +1,7 @@
 import random
 import discord
 import os
+import time
 import requests
 from discord.ext import commands
 
@@ -69,8 +70,43 @@ async def dog(ctx):
     await ctx.send(image_url)
 
 @bot.command()
-async def commands(ctx):
-    await ctx.send(f'İşte kullanabileceğiniz bazı komutlar : !hello , !heh , !repeat , !choose , !mem , !duck , !dog , !commands')
+async def recyclable(ctx):
+    await ctx.send(f'İşte bazı geri dönüştürülebilir malzemeler: Kağıt, Karton, Cam, Plastik, Metal, Elektronik atıklar, Piller, Giysiler ve Tekstil ürünleri. Lütfen geri dönüşüm kutularına atmayı unutmayın!')
 
+@bot.command()
+async def biodegrade(ctx):
+    await ctx.send(f'Plastik: 100-1000 yıl, Cam: 1 milyon yıl, Alüminyum kutular: 200-500 yıl, Kağıt: 2-6 hafta, Organik atıklar: 1-6 ay, Tekstil ürünleri: 1-5 yıl, Elektronik atıklar: 10-50 yıl. Lütfen geri dönüşüm ve atık yönetimine dikkat edelim!')
+
+@bot.command()
+async def recyclebins(ctx):
+    await ctx.send(f'İşte bazı geri dönüşüm kutusu renkleri ve anlamları: Mavi: Kağıt ve karton, Yeşil: Cam, Sarı: Plastik ve metal, Kahverengi: Organik atıklar, Gri/Siyah: Genel atık. Lütfen atıkları doğru kutulara atmayı unutmayın!')
+
+@bot.command()
+async def is_recycle_important(ctx):
+    await ctx.send(f'Evet, geri dönüşüm çok önemlidir! Geri dönüşüm, doğal kaynakları korumamıza, enerji tasarrufu yapmamıza ve çevre kirliliğini azaltmamıza yardımcı olur. Ayrıca, atıkların geri dönüştürülmesi, yeni ürünlerin üretiminde kullanılabilecek malzemelerin elde edilmesini sağlar. Bu nedenle, geri dönüşüm alışkanlıklarını benimsemek ve atıkları doğru şekilde ayrıştırmak büyük bir fark yaratabilir!')
+
+@bot.command()
+async def reuse(ctx):
+    await ctx.send(f'Yeniden kullanım da geri dönüşüm kadar önemlidir! Yeniden kullanım, atıkların tekrar kullanılmasını ve böylece doğal kaynakların korunmasını sağlar. Örneğin, cam kavanozları veya plastik şişeleri tekrar kullanmak, kağıt torbaları veya kutuları yeniden değerlendirmek gibi basit adımlar, çevreye büyük katkı sağlayabilir. Ayrıca, yeniden kullanım, atık miktarını azaltarak çöp sahalarının dolmasını önler ve enerji tasarrufu sağlar. Bu nedenle, yeniden kullanım alışkanlıklarını benimsemek ve atıkları mümkün olduğunca tekrar kullanmak önemlidir!')
+
+@bot.command()
+async def plastic(ctx):
+    await ctx.send(f"Demek plastik hakkında birşeyler öğrenmek ve geri dönüşüm yapmak istiyorsun. Tamam o zaman anlatıyorum.")
+    time.sleep(2)
+    await ctx.send(f"Plastik doğada çok uzun yıllar boyunca çözülmeden kalabilir. Örneğin bir plastik şişe 450+ yıla kadar doğada çözünmeden kalabilir.")
+    time.sleep(2)
+    await ctx.send(f"Plastikler toprağa,yeraltı sularına ve denizlere karışabilir. Bu bölgede yaşayan canlıları da tehlikeye sokar.")
+    time.sleep(2)
+    await ctx.send(f"Örneğin deniz kaplumbağaları plastik poşetleri denizanası sanarak yutar ve boğulur.")
+    time.sleep(2)
+    await ctx.send(f"Başka bir örnek olarak ise deniz kuşları ve balıkların mideleri plastik atıklarla dolarak açlıktan ölmelerine neden olur.")
+
+@bot.command()
+async def commands(ctx):
+    await ctx.send(f'İşte kullanabileceğiniz tüm komutlar : !hello , !heh , !repeat , !gen_pass , !emoji_olusturucu, !choose , !mem , !duck , !dog , !commands , !recyclable , !biodegrade , !recyclebins , !is_recycle_important ,!reuse , !commands_about_recycle, !plastic')
+
+@bot.command()
+async def commands_about_enviroment(ctx):
+    await ctx.send(f'İşte kullanabileceğiniz bazı komutlar :  !recyclable , !biodegrade , !recyclebins , !is_recycle_important , !reuse , !plastic')
     
-bot.run("Tokeninizi Girin !")
+bot.run("Write your token here !")
